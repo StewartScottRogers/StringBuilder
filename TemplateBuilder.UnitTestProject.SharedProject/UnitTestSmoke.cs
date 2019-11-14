@@ -7,9 +7,9 @@ namespace System.Text {
     public class UnitTestSmoke {
         [TestMethod]
         public void Smoke_Test_The_TemplateBuilder() {
-            var nameValuePairs = this.CreateNameValuePairs(0);
+            var nameValuePairs = this.CreateNameValuePairs(3);
 
-            var templateContent = "This needs an auto Template Maker.....";
+            var templateContent = nameValuePairs.CreatePsuedoTestTemplate(30, 500);
 
             var templateBuilder
                 = new StringBuilder(templateContent)
@@ -31,7 +31,7 @@ namespace System.Text {
 
             var document = templatedDocument.ToString();
 
-            nameValuePairs.TestNameValurPairs(document);
+            nameValuePairs.TestNameValuePairs(document);
         }
     }
 }
