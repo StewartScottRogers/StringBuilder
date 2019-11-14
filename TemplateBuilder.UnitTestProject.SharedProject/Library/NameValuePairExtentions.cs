@@ -7,12 +7,14 @@ using System.Text;
 
 namespace System.Text.Library {
     public static class NameValuePairExtentions {
-        public static NameValuePair[] CreateNameValuePairs(this object obj) {
-            return obj.Create().ToArray();
+        public static NameValuePair[] CreateNameValuePairs(this object anyObject, ushort requestedVariableCount) {
+            return anyObject.Create(requestedVariableCount).ToArray();
         }
 
-        private static IEnumerable<NameValuePair> Create(this object obj) {
-            yield return new NameValuePair(@"[Name", @"<Value...>]" + Guid.NewGuid().ToString());
+        private static IEnumerable<NameValuePair> Create(this object anyObject, ushort requestedVariableCount) {
+            var indexCounter = 1;
+            while(indexCounter< requestedVariableCount)
+            yield return new NameValuePair($"[[Name_{indexCounter++:0000000000000}]]", $"<Value_{indexCounter++:0000000000000} {Guid.NewGuid().ToString()}...>]");
 
         }
 
