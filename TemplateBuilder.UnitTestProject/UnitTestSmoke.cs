@@ -5,6 +5,7 @@ namespace System.Text {
     public class UnitTestSmoke {
         [TestMethod]
         public void TestMethod1() {
+
         }
     }
 }

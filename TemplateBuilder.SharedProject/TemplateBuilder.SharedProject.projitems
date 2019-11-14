@@ -9,6 +9,6 @@
     <Import_RootNamespace>System.Text</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)TemplateBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StringBuilderExtentions.cs" />
   </ItemGroup>
 </Project>
