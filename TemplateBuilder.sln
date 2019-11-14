@@ -3,14 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateBuilder", "TemplateBuilder\TemplateBuilder.csproj", "{321AFCB9-1F55-4F46-A8E3-F6DCC901DB15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateBuilder", "TemplateBuilder\TemplateBuilder.csproj", "{321AFCB9-1F55-4F46-A8E3-F6DCC901DB15}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TemplateBuilder.SharedProject", "TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.shproj", "{C8D09A45-30FF-4989-8436-89ED8AC0EC6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateBuilder.UnitTestProject", "TemplateBuilder.UnitTestProject\TemplateBuilder.UnitTestProject.csproj", "{D2AC8C19-C60C-4F7B-A054-0EA9F1DC4F6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateBuilder.UnitTestProject", "TemplateBuilder.UnitTestProject\TemplateBuilder.UnitTestProject.csproj", "{D2AC8C19-C60C-4F7B-A054-0EA9F1DC4F6F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TemplateBuilder.UnitTestProject.SharedProject", "TemplateBuilder.UnitTestProject.SharedProject\TemplateBuilder.UnitTestProject.SharedProject.shproj", "{1589AF25-D013-4F59-843C-434074C511F9}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TemplateBuilder.UnitTestProject.SharedProject\TemplateBuilder.UnitTestProject.SharedProject.projitems*{1589af25-d013-4f59-843c-434074c511f9}*SharedItemsImports = 13
 		TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems*{c8d09a45-30ff-4989-8436-89ed8ac0ec6f}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
