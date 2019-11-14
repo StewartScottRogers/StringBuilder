@@ -3,7 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateBuilder", "TemplateBuilder\TemplateBuilder.csproj", "{321AFCB9-1F55-4F46-A8E3-F6DCC901DB15}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TemplateBuilder.SharedProject", "TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.shproj", "{C8D09A45-30FF-4989-8436-89ED8AC0EC6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateBuilder.UnitTestProject", "TemplateBuilder.UnitTestProject\TemplateBuilder.UnitTestProject.csproj", "{D2AC8C19-C60C-4F7B-A054-0EA9F1DC4F6F}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems*{c8d09a45-30ff-4989-8436-89ed8ac0ec6f}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{321AFCB9-1F55-4F46-A8E3-F6DCC901DB15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321AFCB9-1F55-4F46-A8E3-F6DCC901DB15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321AFCB9-1F55-4F46-A8E3-F6DCC901DB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{321AFCB9-1F55-4F46-A8E3-F6DCC901DB15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AC8C19-C60C-4F7B-A054-0EA9F1DC4F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AC8C19-C60C-4F7B-A054-0EA9F1DC4F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AC8C19-C60C-4F7B-A054-0EA9F1DC4F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AC8C19-C60C-4F7B-A054-0EA9F1DC4F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
