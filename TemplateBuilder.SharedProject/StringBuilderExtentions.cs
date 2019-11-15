@@ -70,20 +70,18 @@ namespace System.Text {
                 }
             }
         }
+    }
 
+    public interface ITemplateBuilder {
+        ITemplateBuilder AddVariableName(string variableName);
+        ITemplate ToTemplate();
+    }
 
+    public interface ITemplate {
+        ITemplatedDocument CreateTemplatedDocument();
+    }
 
-        public interface ITemplateBuilder {
-            ITemplateBuilder AddVariableName(string variableName);
-            ITemplate ToTemplate();
-        }
-
-        public interface ITemplate {
-            ITemplatedDocument CreateTemplatedDocument();
-        }
-
-        public interface ITemplatedDocument {
-            ITemplatedDocument Replace(string variableName, string variableValue);
-        }
+    public interface ITemplatedDocument {
+        ITemplatedDocument Replace(string variableName, string variableValue);
     }
 }
