@@ -9,8 +9,10 @@
     <Import_RootNamespace>System.Text</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Library\FromToRange.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\NameValuePair.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Library\NameValuePairExtentions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\UnitTestRoutines.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\TemplatedDocumentAndNameValuePairs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UnitTestSmoke.cs" />
   </ItemGroup>
 </Project>

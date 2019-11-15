@@ -6,20 +6,16 @@ namespace System.Text {
 
     [TestClass]
     public class UnitTestSmoke {
+        private TemplatedDocumentAndNameValuePairs TemplatedDocumentAndNameValuePairs = null;
+
+        [TestInitialize]
+        public void TestInitialize() {
+            TemplatedDocumentAndNameValuePairs = UnitTestRoutines.CreatTestTemplatedDocumentAndTestNameValuePairs(testVariableCount: 3, fromToRange: new FromToRange() { from = 30, to = 300 });
+        }
+
         [TestMethod]
-        public void Smoke_Test_The_TemplateBuilder() {
-            var templatedDocumentAndNameValuePairs = NameValuePairExtentions.CreatTemplatedDocumentAndNameValuePairs(requestedVariableCount: 3, fromFragmentlength: 30, toFragmentlength: 500);
-            MergeTemplate(templatedDocumentAndNameValuePairs.NameValuePairs, templatedDocumentAndNameValuePairs.TemplatedDocument);
+        public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_A_Test_Document() {
+            TemplatedDocumentAndNameValuePairs.MergeTestTemplateWithNamedValuePairsIntoADocumentAndTest();
         }
-
-        #region Private Methods
-        private static void MergeTemplate(NameValuePair[] nameValuePairs, ITemplatedDocument templatedDocument) {
-            foreach (var nameValuePair in nameValuePairs)
-                templatedDocument
-                    .Replace(nameValuePair.Name, nameValuePair.Value);
-
-            NameValuePairExtentions.TestTemplatedDocumentAndNameValuePairs(nameValuePairs, templatedDocument.ToString());
-        }
-        #endregion
     }
 }

@@ -52,7 +52,7 @@ namespace System.Text {
                             foreach (var variableNameValuePair in nameValuePairList.ToArray())
                                 if (TemplateToken == variableNameValuePair.Name) {
                                     stringBuilder.Append(variableNameValuePair.Value);
-                                    variableNameValuePairCollection.Remove(variableNameValuePair);
+                                    nameValuePairList.Remove(variableNameValuePair);
                                 } else
                                     stringBuilder.Append(TemplateToken);
 
