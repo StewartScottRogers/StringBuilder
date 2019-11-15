@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace System.Text.Library {
+﻿namespace System.Text.Library {
     public struct NameValuePair {
         public NameValuePair(string name, string value) {
             Name = name;
