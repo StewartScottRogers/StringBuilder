@@ -35,15 +35,15 @@ namespace System.Text.Library {
             };
         }
 
-        public static void MergeTestTemplateWithNamedValuePairsIntoADocumentAndTest(this TemplatedDocumentAndNameValuePairs templatedDocumentAndNameValuePairs) {
+        public static void MergeTestTemplateWithNamedValuePairsIntoADocumentAndTest(this TemplatedDocumentAndNameValuePairs templatedDocumentAndNameValuePairs, int index) {
             foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
                 templatedDocumentAndNameValuePairs.TemplatedDocument
                     .Replace(nameValuePair.Name, nameValuePair.Value);
 
-            templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().NotBeEmpty();
+            //templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().NotBeEmpty();
 
-            foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
-                templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().Contain(nameValuePair.Value);
+            //foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
+            //    templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().Contain(nameValuePair.Value);
         }
         #endregion
 
