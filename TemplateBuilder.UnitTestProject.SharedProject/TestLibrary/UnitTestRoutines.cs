@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace System.Text.Library {
+namespace System.Text.TestLibrary {
     public static class UnitTestRoutines {
         #region Members
         private static Random Random = new Random();
@@ -22,7 +22,7 @@ namespace System.Text.Library {
 
             foreach (var nameValuePair in nameValuePairs)
                 templateBuilder
-                    .AddVariableName(nameValuePair.Name);
+                    .AddVariable(nameValuePair.Name);
 
             var templatedDocument
                 = templateBuilder
@@ -34,15 +34,18 @@ namespace System.Text.Library {
             };
         }
 
-        public static void MergeTestTemplateWithNamedValuePairsIntoADocumentAndTest(this TemplatedDocumentAndNameValuePairs templatedDocumentAndNameValuePairs, int index) {
+        public static void MergeTestTemplateWithNamedValuePairsIntoADocumentAndTest(this TemplatedDocumentAndNameValuePairs templatedDocumentAndNameValuePairs, int index, bool enableTestOfMerge = false) {
             foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
                 templatedDocumentAndNameValuePairs.TemplatedDocument
-                    .Replace(nameValuePair.Name, nameValuePair.Value);
+                    .ReplaceVariable(nameValuePair.Name, nameValuePair.Value);
 
-            //templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().NotBeEmpty();
+            if (!enableTestOfMerge)
+                return;
 
-            //foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
-            //    templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().Contain(nameValuePair.Value);
+            templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().NotBeEmpty();
+
+            foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
+                templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().Contain(nameValuePair.Value);
         }
         #endregion
 
@@ -50,16 +53,16 @@ namespace System.Text.Library {
         private static string BuildOutRandomizedTemplate(this NameValuePair[] nameValuePairs, FromToRange fromToRange) {
             var stringBuilder = new StringBuilder();
 
-            stringBuilder.Append("Start ");
-            stringBuilder.Append(CreateRandomizedTemplateFragement(Random.Next(fromToRange.from, fromToRange.to)));
+            stringBuilder.AppendTemplateFragement("Start ");
+            stringBuilder.AppendTemplateFragement(CreateRandomizedTemplateFragement(Random.Next(fromToRange.from, fromToRange.to)));
 
             foreach (var nameValuePair in nameValuePairs) {
-                stringBuilder.Append(nameValuePair.Name);
-                stringBuilder.Append(CreateRandomizedTemplateFragement(Random.Next(fromToRange.from, fromToRange.to)));
+                stringBuilder.AppendTemplateVariable(nameValuePair.Name);
+                stringBuilder.AppendTemplateFragement(CreateRandomizedTemplateFragement(Random.Next(fromToRange.from, fromToRange.to)));
             }
 
-            stringBuilder.Append(CreateRandomizedTemplateFragement(Random.Next(fromToRange.from, fromToRange.to)));
-            stringBuilder.Append(" Completed.");
+            stringBuilder.AppendTemplateFragement(CreateRandomizedTemplateFragement(Random.Next(fromToRange.from, fromToRange.to)));
+            stringBuilder.AppendTemplateFragement(" Completed.");
             return stringBuilder.ToString();
         }
 

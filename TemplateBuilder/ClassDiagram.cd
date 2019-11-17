@@ -15,7 +15,7 @@
             <TypeIdentifier>
               <NewMemberFileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</NewMemberFileName>
             </TypeIdentifier>
-            <Lollipop Position="0.2" />
+            <Lollipop Orientation="Left" Position="0.1" />
           </Class>
           <Struct Name="System.Text.StringBuilderExtentions.TemplateBuilder.VariableNameValuePair">
             <TypeIdentifier>
@@ -30,21 +30,21 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAEAAAAACAA=</HashCode>
       <FileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="System.Text.ITemplateBuilder">
     <Position X="3.25" Y="2.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="System.Text.ITemplatedDocument">
     <Position X="3.25" Y="7.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAACA=</HashCode>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</FileName>
     </TypeIdentifier>
   </Interface>

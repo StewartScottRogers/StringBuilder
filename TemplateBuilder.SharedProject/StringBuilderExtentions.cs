@@ -5,6 +5,10 @@ namespace System.Text {
     public static class StringBuilderExtentions {
         private static readonly string Deliniator = Guid.NewGuid().ToString();
 
+        public static StringBuilder AppendTemplateVariable(this StringBuilder stringBuilder, String value) => stringBuilder.Append(value);
+
+        public static StringBuilder AppendTemplateFragement(this StringBuilder stringBuilder, String value) => stringBuilder.Append(value);
+
         public static ITemplateBuilder ToTemplateBuilder(this StringBuilder stringBuilder) => new TemplateBuilder(stringBuilder.ToString());
 
         private class TemplateBuilder : ITemplateBuilder {
@@ -12,7 +16,7 @@ namespace System.Text {
 
             public TemplateBuilder(String value) => this.StringBuilder = new StringBuilder(value);
 
-            public ITemplateBuilder AddVariableName(string variableName) {
+            public ITemplateBuilder AddVariable(string variableName) {
                 StringBuilder.Replace(variableName, $"{Deliniator}{variableName}{Deliniator}");
                 return this;
             }
@@ -34,7 +38,7 @@ namespace System.Text {
 
                 public TemplatedDocument(string[] templateTokens, int templateSize) { TemplateTokens = templateTokens; TemplateSize = templateSize + (templateSize / 10); }
 
-                public ITemplatedDocument Replace(string variableName, string variableValue) { variableNameValuePairCollection.Add(new VariableNameValuePair(variableName, variableValue)); return this; }
+                public ITemplatedDocument ReplaceVariable(string variableName, string variableValue) { variableNameValuePairCollection.Add(new VariableNameValuePair(variableName, variableValue)); return this; }
 
                 public string ToDocument() {
 
@@ -65,12 +69,12 @@ namespace System.Text {
     }
 
     public interface ITemplateBuilder {
-        ITemplateBuilder AddVariableName(string variableName);
+        ITemplateBuilder AddVariable(string variableName);
         ITemplatedDocument ToTemplatedDocument();
     }
 
     public interface ITemplatedDocument {
-        ITemplatedDocument Replace(string variableName, string variableValue);
+        ITemplatedDocument ReplaceVariable(string variableName, string variableValue);
         string ToDocument();
     }
 }

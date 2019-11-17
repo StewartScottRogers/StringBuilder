@@ -1,4 +1,4 @@
-﻿namespace System.Text.Library {
+﻿namespace System.Text.TestLibrary {
     public struct NameValuePair {
         public NameValuePair(string name, string value) {
             Name = name;
