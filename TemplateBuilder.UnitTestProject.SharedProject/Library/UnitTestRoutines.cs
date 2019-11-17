@@ -26,8 +26,7 @@ namespace System.Text.Library {
 
             var templatedDocument
                 = templateBuilder
-                    .ToTemplate()
-                        .CreateTemplatedDocument();
+                    .CreateTemplatedDocument();
 
             return new TemplatedDocumentAndNameValuePairs() {
                 NameValuePairs = nameValuePairs,

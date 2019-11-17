@@ -7,23 +7,21 @@ namespace System.Text {
 
         public static ITemplateBuilder ToTemplateBuilder(this StringBuilder stringBuilder) => new TemplateBuilder(stringBuilder.ToString());
 
-
-
         private class TemplateBuilder : ITemplateBuilder {
-            private readonly StringBuilder TheStringBuilder;
+            private readonly StringBuilder StringBuilder;
 
-            public TemplateBuilder(String value) => this.TheStringBuilder = new StringBuilder(value);
+            public TemplateBuilder(String value) => this.StringBuilder = new StringBuilder(value);
 
             public ITemplateBuilder AddVariableName(string variableName) {
-                TheStringBuilder.Replace(variableName, $"{Deliniator}{variableName}{Deliniator}");
+                StringBuilder.Replace(variableName, $"{Deliniator}{variableName}{Deliniator}");
                 return this;
             }
 
-            public ITemplate ToTemplate() => new Template(TheStringBuilder.ToString());
+            public ITemplatedDocument CreateTemplatedDocument() => new Template(StringBuilder.ToString()).CreateTemplatedDocument();
 
-            public override string ToString() => TheStringBuilder.ToString();
+            public override string ToString() => StringBuilder.ToString();
 
-            private class Template : ITemplate {
+            private class Template {
                 private readonly int TemplateSize;
                 private readonly string[] TemplateTokens;
 
@@ -43,7 +41,8 @@ namespace System.Text {
 
                     public ITemplatedDocument Replace(string variableName, string variableValue) { variableNameValuePairCollection.Add(new VariableNameValuePair(variableName, variableValue)); return this; }
 
-                    public override string ToString() {
+                    public string ToDocument() {
+
                         var nameValuePairList = variableNameValuePairCollection.ToList();
 
                         var stringBuilder = new StringBuilder(TemplateSize);
@@ -58,6 +57,8 @@ namespace System.Text {
 
                         return stringBuilder.ToString();
                     }
+
+                    public override string ToString() => ToDocument();
 
                     private struct VariableNameValuePair {
                         public VariableNameValuePair(string name, string value) {
@@ -74,14 +75,11 @@ namespace System.Text {
 
     public interface ITemplateBuilder {
         ITemplateBuilder AddVariableName(string variableName);
-        ITemplate ToTemplate();
-    }
-
-    public interface ITemplate {
         ITemplatedDocument CreateTemplatedDocument();
     }
 
     public interface ITemplatedDocument {
         ITemplatedDocument Replace(string variableName, string variableValue);
+        string ToDocument();
     }
 }
