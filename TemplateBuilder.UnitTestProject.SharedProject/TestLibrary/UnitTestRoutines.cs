@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace System.Text.TestLibrary {
@@ -9,8 +8,8 @@ namespace System.Text.TestLibrary {
         private static string Characters = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()abcdefghijklmnopqrstuvwxyz0123456789";
         #endregion
 
-        #region public Methods
-        public static TemplatedDocumentAndNameValuePairs CreatTestTemplatedDocumentAndTestNameValuePairs(ushort testVariableCount, FromToRange fromToRange) {
+        #region Public Methods
+        public static TemplatedDocumentAndNameValuePairs CreatTemplatedDocumentAndNameValuePairs(ushort testVariableCount, FromToRange fromToRange) {
             var nameValuePairs = CreateIndexedNameValuePairs(testVariableCount).ToArray();
             var stringBuilder = new StringBuilder(nameValuePairs.BuildOutRandomizedTemplate(fromToRange));
             var templateBuilder = stringBuilder.ToTemplateBuilder();
@@ -24,20 +23,6 @@ namespace System.Text.TestLibrary {
                 StringBuilder = stringBuilder,
                 TemplatedDocument = templateBuilder.ToTemplatedDocument()
             };
-        }
-
-        public static void MergeTestTemplateWithNamedValuePairsIntoADocumentAndTest(this TemplatedDocumentAndNameValuePairs templatedDocumentAndNameValuePairs, int index, bool enableTestOfMerge = false) {
-            foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
-                templatedDocumentAndNameValuePairs.TemplatedDocument
-                    .ReplaceVariable(nameValuePair.Name, nameValuePair.Value);
-
-            if (!enableTestOfMerge)
-                return;
-
-            templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().NotBeEmpty();
-
-            foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
-                templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().Contain(nameValuePair.Value);
         }
         #endregion
 

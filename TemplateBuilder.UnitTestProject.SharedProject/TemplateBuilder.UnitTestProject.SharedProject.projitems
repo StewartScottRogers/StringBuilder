@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\FromToRange.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\NameValuePair.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\PreBuiltTestTemplates.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\TestTemplateBuilderFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\UnitTestRoutines.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\TemplatedDocumentAndNameValuePairs.cs" />
     <Compile Include="..\TemplateBuilder.UnitTestProject.SharedProject\TemplateBuilderTest.cs" />
