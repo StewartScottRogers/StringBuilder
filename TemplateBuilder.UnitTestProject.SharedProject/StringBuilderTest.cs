@@ -6,7 +6,7 @@ using System.Text.TestLibrary;
 namespace System.Text {
 
     [TestClass]
-    public class TemplateBuilderTest {
+    public class StringBuilderTest {
         private static TemplatedDocumentAndNameValuePairs TemplatedDocumentAndNameValuePairs 
             = UnitTestRoutines
                 .CreatTestTemplatedDocumentAndTestNameValuePairs(testVariableCount: 50, fromToRange: new FromToRange() { from = 50, to = 100 });

@@ -12,25 +12,17 @@ namespace System.Text.TestLibrary {
         #region public Methods
         public static TemplatedDocumentAndNameValuePairs CreatTestTemplatedDocumentAndTestNameValuePairs(ushort testVariableCount, FromToRange fromToRange) {
             var nameValuePairs = CreateIndexedNameValuePairs(testVariableCount).ToArray();
-
-            var templateContent
-                = nameValuePairs.BuildOutRandomizedTemplate(fromToRange);
-
-            var templateBuilder
-                = new StringBuilder(templateContent)
-                    .ToTemplateBuilder();
+            var stringBuilder = new StringBuilder(nameValuePairs.BuildOutRandomizedTemplate(fromToRange));
+            var templateBuilder = stringBuilder.ToTemplateBuilder();
 
             foreach (var nameValuePair in nameValuePairs)
                 templateBuilder
                     .AddVariable(nameValuePair.Name);
 
-            var templatedDocument
-                = templateBuilder
-                    .ToTemplatedDocument();
-
             return new TemplatedDocumentAndNameValuePairs() {
                 NameValuePairs = nameValuePairs,
-                TemplatedDocument = templatedDocument
+                StringBuilder = stringBuilder,
+                TemplatedDocument = templateBuilder.ToTemplatedDocument()
             };
         }
 

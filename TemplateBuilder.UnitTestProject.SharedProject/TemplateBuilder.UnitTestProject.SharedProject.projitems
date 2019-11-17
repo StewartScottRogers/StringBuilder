@@ -9,6 +9,7 @@
     <Import_RootNamespace>System.Text</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)StringBuilderTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\FromToRange.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\NameValuePair.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\PreBuiltTestTemplates.cs" />
