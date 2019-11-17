@@ -11,29 +11,17 @@
           <Compartment Name="Nested Types" Collapsed="false" />
         </Compartments>
         <NestedTypes>
-          <Class Name="System.Text.StringBuilderExtentions.TemplateBuilder.Template">
-            <Compartments>
-              <Compartment Name="Nested Types" Collapsed="false" />
-            </Compartments>
-            <NestedTypes>
-              <Class Name="System.Text.StringBuilderExtentions.TemplateBuilder.Template.TemplatedDocument">
-                <NestedTypes>
-                  <Struct Name="System.Text.StringBuilderExtentions.TemplateBuilder.Template.TemplatedDocument.VariableNameValuePair" Collapsed="true">
-                    <TypeIdentifier>
-                      <NewMemberFileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</NewMemberFileName>
-                    </TypeIdentifier>
-                  </Struct>
-                </NestedTypes>
-                <TypeIdentifier>
-                  <NewMemberFileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</NewMemberFileName>
-                </TypeIdentifier>
-                <Lollipop Position="0.2" />
-              </Class>
-            </NestedTypes>
+          <Class Name="System.Text.StringBuilderExtentions.TemplateBuilder.TemplatedDocument">
             <TypeIdentifier>
               <NewMemberFileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</NewMemberFileName>
             </TypeIdentifier>
+            <Lollipop Position="0.2" />
           </Class>
+          <Struct Name="System.Text.StringBuilderExtentions.TemplateBuilder.VariableNameValuePair">
+            <TypeIdentifier>
+              <NewMemberFileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Struct>
         </NestedTypes>
         <TypeIdentifier>
           <NewMemberFileName>C:\Repos\StringBuilder\TemplateBuilder.SharedProject\StringBuilderExtentions.cs</NewMemberFileName>
