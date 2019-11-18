@@ -10,12 +10,12 @@ The TemplateBuilder is available on the StringBuilder as an extension method ‘
 </Description>
     <Authors>https://www.linkedin.com/in/stewartscottrogers/</Authors>
     <Company>S Rogers Consulting, LLC</Company>
-    <Product>TemplateBuilder</Product>
+    <Product>StringBuilder.ToTemplateBuilder</Product>
     <PackageProjectUrl>https://github.com/StewartScottRogers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/StewartScottRogers/StringBuilder</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>StringBuilder, String, Template</PackageTags>
-    <PackageId>TemplateBuilder</PackageId>
+    <PackageId>StringBuilder.ToTemplateBuilder</PackageId>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
     <Version>1.0.1</Version>
