@@ -2,7 +2,7 @@
 
 namespace System.Text.TestLibrary {
     public static class TestTemplateBuilderFactory {
-        public static void MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndNameValuePairs templatedDocumentAndNameValuePairs, int index, bool enableTestOfMerge = false) {
+        public static void TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndNameValuePairs templatedDocumentAndNameValuePairs, int index, bool enableTestOfMerge = false) {
             foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
                 templatedDocumentAndNameValuePairs.TemplatedDocument
                     .ReplaceVariable(nameValuePair.Name, nameValuePair.Value);
