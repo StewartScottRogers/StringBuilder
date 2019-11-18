@@ -6,53 +6,53 @@ using System.Text.TestLibrary;
 namespace System.Text {
 
     [TestClass]
-    public class TemplateBuilderTest {
+    public class StringTest {
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0000001_A_Test_Document_In_Order_To_Warmup_UnitTest() {
             foreach (var index in Enumerable.Range(1, 1))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0000001_Test_Document() {
             foreach (var index in Enumerable.Range(1, 1))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(0);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(0);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0000010_Test_Document() {
             foreach (var index in Enumerable.Range(1, 10))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0000100_Test_Document() {
             foreach (var index in Enumerable.Range(1, 100))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0001000_Test_Document() {
             foreach (var index in Enumerable.Range(1, 1000))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0010000_Test_Document() {
             foreach (var index in Enumerable.Range(1, 10000))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
         //[TestMethod]
         //public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0100000_Test_Document() {
         //    foreach (var index in Enumerable.Range(1, 100000))
-        //        PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+        //        PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         //}
 
         //[TestMethod]
         //public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_1000000_Test_Document() {
         //    foreach (var index in Enumerable.Range(1, 1000000))
-        //        PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+        //        PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         //}
     }
 }

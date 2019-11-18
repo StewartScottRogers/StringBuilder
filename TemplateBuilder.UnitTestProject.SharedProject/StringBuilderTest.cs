@@ -43,16 +43,16 @@ namespace System.Text {
                 PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
-        [TestMethod]
-        public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0100000_Test_Document() {
-            foreach (var index in Enumerable.Range(1, 100000))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
-        }
+        //[TestMethod]
+        //public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_0100000_Test_Document() {
+        //    foreach (var index in Enumerable.Range(1, 100000))
+        //        PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+        //}
 
-        [TestMethod]
-        public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_1000000_Test_Document() {
-            foreach (var index in Enumerable.Range(1, 1000000))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
-        }
+        //[TestMethod]
+        //public void Merge_A_Test_Template_With_Test_NamedValuePairs_Into_1000000_Test_Document() {
+        //    foreach (var index in Enumerable.Range(1, 1000000))
+        //        PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+        //}
     }
 }

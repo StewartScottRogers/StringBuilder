@@ -10,10 +10,11 @@ namespace System.Text.TestLibrary {
             if (!enableTestOfMerge)
                 return;
 
-            templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().NotBeEmpty();
+            var targetedTemplate = templatedDocumentAndNameValuePairs.TemplatedDocument.ToString();
 
+            targetedTemplate.Should().NotBeEmpty();
             foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
-                templatedDocumentAndNameValuePairs.TemplatedDocument.ToString().Should().Contain(nameValuePair.Value);
+                targetedTemplate.Should().Contain(nameValuePair.Value);
         }
     }
 }
