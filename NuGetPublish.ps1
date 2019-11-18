@@ -1,1 +1,3 @@
-dotnet nuget push System.Text.TemplateBuilder.1.0.0.nupkg -k oy2gadiykjkeueepd5wqhfq3r2acwowu3e6rtndua62l3m -s https://api.nuget.org/v3/index.json
+$ScriptDir = Split-Path $script:MyInvocation.MyCommand.Path
+Write-Host "Current script directory is $ScriptDir"
+dotnet nuget push $ScriptDir\TemplateBuilder\bin\Release\TemplateBuilder.1.0.1.nupkg -k oy2etn3zxhpc5ic6pzeaov2griugaotexhqqsjqckkk5ya -s https://api.nuget.org/v3/index.json

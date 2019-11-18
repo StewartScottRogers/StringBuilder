@@ -15,6 +15,10 @@ The TemplateBuilder is available on the StringBuilder as an extension method ‘
     <RepositoryUrl>https://github.com/StewartScottRogers/StringBuilder</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>StringBuilder, String, Template</PackageTags>
+    <PackageId>TemplateBuilder</PackageId>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <Import Project="..\TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems" Label="Shared" />
