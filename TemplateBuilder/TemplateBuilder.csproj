@@ -4,6 +4,17 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <RootNamespace>System.Text</RootNamespace>
     <AssemblyName>System.Text.TemplateBuilder</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>The StringBuilder is optimized to append text and compromises other methods like Replace(..).
+The TemplateBuilder is available on the StringBuilder as an extension method ‘ToTemplateBuilder()’ and is optimized for replacing variables with values within the templated string. The TemplateBuilder  is optimized for merging name-value-pairs into a templated string and providing a merged document. The Template Builder is designed to maximize through put over using the String and StringBuilder Replace(name value) method.
+</Description>
+    <Authors>https://www.linkedin.com/in/stewartscottrogers/</Authors>
+    <Company>S Rogers Consulting, LLC</Company>
+    <Product>TemplateBuilder</Product>
+    <PackageProjectUrl>https://github.com/StewartScottRogers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/StewartScottRogers/StringBuilder</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>StringBuilder, String, Template</PackageTags>
   </PropertyGroup>
 
   <Import Project="..\TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems" Label="Shared" />
