@@ -2,10 +2,10 @@
 
 namespace System.Text.TestLibrary {
     public static class StringMergeAndTest {
-        public static void String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndNameValuePairs templatedDocumentAndNameValuePairs, int index, bool enableTestOfMerge = false) {
-            var targetTemplate = templatedDocumentAndNameValuePairs.StringBuilder.ToString();
-            foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
-                targetTemplate.Replace(nameValuePair.Name, nameValuePair.Value);
+        public static void String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndKeyValuePairs, int index, bool enableTestOfMerge = false) {
+            var targetTemplate = templatedDocumentAndKeyValuePairs.StringBuilder.ToString();
+            foreach (var keyValuePair in templatedDocumentAndKeyValuePairs.KeyValuePairs)
+                targetTemplate.Replace(keyValuePair.Key, keyValuePair.Value);
 
             if (!enableTestOfMerge)
                 return;
@@ -13,7 +13,7 @@ namespace System.Text.TestLibrary {
             var targetedTemplate = targetTemplate.ToString();
 
             targetedTemplate.Should().NotBeEmpty();
-            foreach (var nameValuePair in templatedDocumentAndNameValuePairs.NameValuePairs)
+            foreach (var nameValuePair in templatedDocumentAndKeyValuePairs.KeyValuePairs)
                 targetedTemplate.Should().Contain(nameValuePair.Value);
         }
     }

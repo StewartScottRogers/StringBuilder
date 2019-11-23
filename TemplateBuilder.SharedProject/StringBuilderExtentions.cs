@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace System.Text {
@@ -32,23 +33,23 @@ namespace System.Text {
             public override string ToString() => StringBuilder.ToString();
 
             private class TemplatedDocument : ITemplatedDocument {
-                private readonly Collection<VariableNameValuePair> variableNameValuePairCollection = new Collection<VariableNameValuePair>();
+                private readonly Collection<KeyValuePair<string,string>> KeyValuePairCollection = new Collection<KeyValuePair<string, string>>();
                 private readonly string[] TemplateTokens;
                 private readonly int TemplateSize;
 
                 public TemplatedDocument(string[] templateTokens, int templateSize) { TemplateTokens = templateTokens; TemplateSize = templateSize + (templateSize / 10); }
 
-                public ITemplatedDocument ReplaceVariable(string variableName, string variableValue) { variableNameValuePairCollection.Add(new VariableNameValuePair(variableName, variableValue)); return this; }
+                public ITemplatedDocument ReplaceVariable(string variableName, string variableValue) { KeyValuePairCollection.Add(new KeyValuePair<string, string>(variableName, variableValue)); return this; }
 
                 public string ToDocument() {
 
-                    var nameValuePairList = variableNameValuePairCollection.ToList();
+                    var nameValuePairList = KeyValuePairCollection.ToList();
 
                     var stringBuilder = new StringBuilder(TemplateSize);
 
                     foreach (var TemplateToken in TemplateTokens)
                         foreach (var variableNameValuePair in nameValuePairList.ToArray())
-                            if (TemplateToken == variableNameValuePair.Name) {
+                            if (TemplateToken == variableNameValuePair.Key) {
                                 stringBuilder.Append(variableNameValuePair.Value);
                                 nameValuePairList.Remove(variableNameValuePair);
                             } else
@@ -58,12 +59,6 @@ namespace System.Text {
                 }
 
                 public override string ToString() => ToDocument();
-            }
-
-            private struct VariableNameValuePair {
-                public VariableNameValuePair(string name, string value) { Name = name; Value = value; }
-                public string Name;
-                public string Value;
             }
         }
     }

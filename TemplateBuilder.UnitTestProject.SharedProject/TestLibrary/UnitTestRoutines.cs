@@ -9,17 +9,17 @@ namespace System.Text.TestLibrary {
         #endregion
 
         #region Public Methods
-        public static TemplatedDocumentAndNameValuePairs CreatTemplatedDocumentAndNameValuePairs(ushort testVariableCount, FromToRange fromToRange) {
-            var nameValuePairs = CreateIndexedNameValuePairs(testVariableCount).ToArray();
-            var stringBuilder = new StringBuilder(nameValuePairs.BuildOutRandomizedTemplate(fromToRange));
+        public static TemplatedDocumentAndKeyValuePairs CreatTemplatedDocumentAndNameValuePairs(ushort testVariableCount, FromToRange fromToRange) {
+            var keyValuePairs = CreateIndexedNameValuePairs(testVariableCount).ToArray();
+            var stringBuilder = new StringBuilder(keyValuePairs.BuildOutRandomizedTemplate(fromToRange));
             var templateBuilder = stringBuilder.ToTemplateBuilder();
 
-            foreach (var nameValuePair in nameValuePairs)
+            foreach (var keyValuePair in keyValuePairs)
                 templateBuilder
-                    .AddVariable(nameValuePair.Name);
+                    .AddVariable(keyValuePair.Key);
 
-            return new TemplatedDocumentAndNameValuePairs() {
-                NameValuePairs = nameValuePairs,
+            return new TemplatedDocumentAndKeyValuePairs() {
+                KeyValuePairs = keyValuePairs,
                 StringBuilder = stringBuilder,
                 TemplatedDocument = templateBuilder.ToTemplatedDocument()
             };
@@ -27,14 +27,14 @@ namespace System.Text.TestLibrary {
         #endregion
 
         #region Private Methods
-        private static string BuildOutRandomizedTemplate(this NameValuePair[] nameValuePairs, FromToRange fromToRange) {
+        private static string BuildOutRandomizedTemplate(this KeyValuePair<string, string>[] keyValuePairs, FromToRange fromToRange) {
             var stringBuilder = new StringBuilder();
 
             stringBuilder.AppendTemplateFragement("Start ");
             stringBuilder.AppendTemplateFragement(CreateRandomizedTemplateFragement(Random.Next(fromToRange.from, fromToRange.to)));
 
-            foreach (var nameValuePair in nameValuePairs) {
-                stringBuilder.AppendTemplateVariable(nameValuePair.Name);
+            foreach (var keyValuePair in keyValuePairs) {
+                stringBuilder.AppendTemplateVariable(keyValuePair.Key);
                 stringBuilder.AppendTemplateFragement(CreateRandomizedTemplateFragement(Random.Next(fromToRange.from, fromToRange.to)));
             }
 
@@ -43,10 +43,10 @@ namespace System.Text.TestLibrary {
             return stringBuilder.ToString();
         }
 
-        private static IEnumerable<NameValuePair> CreateIndexedNameValuePairs(ushort testVariableCount) {
+        private static IEnumerable<KeyValuePair<string, string>> CreateIndexedNameValuePairs(ushort testVariableCount) {
             var indexCounter = 1;
             while (indexCounter < testVariableCount)
-                yield return new NameValuePair($"[[Name_{indexCounter++:0000000000000}]]", $"<Value_{indexCounter++:0000000000000} '{Guid.NewGuid().ToString()}'>");
+                yield return new KeyValuePair<string, string>($"[[Key_{indexCounter++:0000000000000}]]", $"<Value_{indexCounter++:0000000000000} '{Guid.NewGuid().ToString()}'>");
         }
 
         private static string CreateRandomizedTemplateFragement(int templateFragementLength) {
