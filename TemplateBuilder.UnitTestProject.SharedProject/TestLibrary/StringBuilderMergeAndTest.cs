@@ -1,7 +1,9 @@
 ﻿using FluentAssertions;
+using System.Runtime.CompilerServices;
 
 namespace System.Text.TestLibrary {
     public static class StringBuilderMergeAndTest {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndNameValuePairs, int index, bool enableTestOfMerge = false) {
             var targetTemplate = templatedDocumentAndNameValuePairs.StringBuilder;
             foreach (var nameValuePair in templatedDocumentAndNameValuePairs.KeyValuePairs)

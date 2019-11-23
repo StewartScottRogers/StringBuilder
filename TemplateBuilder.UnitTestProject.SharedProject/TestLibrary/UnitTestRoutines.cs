@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace System.Text.TestLibrary {
     public static class UnitTestRoutines {
@@ -9,6 +10,7 @@ namespace System.Text.TestLibrary {
         #endregion
 
         #region Public Methods
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TemplatedDocumentAndKeyValuePairs CreatTemplatedDocumentAndNameValuePairs(ushort testVariableCount, FromToRange fromToRange) {
             var keyValuePairs = CreateIndexedNameValuePairs(testVariableCount).ToArray();
             var stringBuilder = new StringBuilder(keyValuePairs.BuildOutRandomizedTemplate(fromToRange));
@@ -27,6 +29,7 @@ namespace System.Text.TestLibrary {
         #endregion
 
         #region Private Methods
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static string BuildOutRandomizedTemplate(this KeyValuePair<string, string>[] keyValuePairs, FromToRange fromToRange) {
             var stringBuilder = new StringBuilder();
 
@@ -43,12 +46,14 @@ namespace System.Text.TestLibrary {
             return stringBuilder.ToString();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static IEnumerable<KeyValuePair<string, string>> CreateIndexedNameValuePairs(ushort testVariableCount) {
             var indexCounter = 1;
             while (indexCounter < testVariableCount)
                 yield return new KeyValuePair<string, string>($"[[Key_{indexCounter++:0000000000000}]]", $"<Value_{indexCounter++:0000000000000} '{Guid.NewGuid().ToString()}'>");
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static string CreateRandomizedTemplateFragement(int templateFragementLength) {
             var randomIndex = Random.Next(Characters.Length - 1);
             return new string(Enumerable.Repeat(Characters, templateFragementLength).Select(character => character[randomIndex]).ToArray());
