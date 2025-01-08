@@ -11,16 +11,18 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests\StringTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests\StringBuilderTest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Library\FromToRange.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Library\PreBuiltTestTemplates.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Library\StringMergeAndTest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Library\StringBuilderMergeAndTest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Library\TemplateBuilderMergeAndTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FromToRange.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PreBuiltTestTemplates.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Extentions\StringMergeAndTestExtentions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Extentions\StringBuilderMergeAndTestExtentions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\Extentions\TemplateBuilderMergeAndTestExtentions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\UnitTestRoutines.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Library\TemplatedDocumentAndKeyValuePairs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TemplatedDocumentAndKeyValuePairs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UnitTests\TemplateBuilderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Library\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)UnitTests\Extentions\" />
   </ItemGroup>
 </Project>

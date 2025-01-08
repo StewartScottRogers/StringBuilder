@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 
 namespace System.Text.TestLibrary {
-    public static class StringBuilderMergeAndTest {
+    public static class StringBuilderMergeAndTestExtentions {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static StringBuilder StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndKeyValuePairs, int index, bool enableTestOfMerge = false) {
 

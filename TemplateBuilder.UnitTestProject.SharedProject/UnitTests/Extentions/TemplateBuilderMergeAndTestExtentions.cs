@@ -2,7 +2,8 @@
 using System.Runtime.CompilerServices;
 
 namespace System.Text.TestLibrary {
-    public static class TestTemplateBuilderFactory {
+    public static class TemplateBuilderMergeAndTestExtentions {
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ITemplatedDocument TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndKeyValuePairs, int index, bool enableTestOfMerge = false) {
 

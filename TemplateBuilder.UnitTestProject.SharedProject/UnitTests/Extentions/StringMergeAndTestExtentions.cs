@@ -2,7 +2,8 @@
 using System.Runtime.CompilerServices;
 
 namespace System.Text.TestLibrary {
-    public static class StringMergeAndTest {
+    public static class StringMergeAndTestExtentions {
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndKeyValuePairs, int index, bool enableTestOfMerge = false) {
 
@@ -10,7 +11,7 @@ namespace System.Text.TestLibrary {
                 = templatedDocumentAndKeyValuePairs
                     .TemplatedDocument;
 
-            string targetTemplateCopy 
+            string targetTemplateCopy
                 = templatedDocument
                     .ToDocument();
 
