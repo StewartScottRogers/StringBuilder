@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29503.13
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateBuilder", "TemplateBuilder\TemplateBuilder.csproj", "{321AFCB9-1F55-4F46-A8E3-F6DCC901DB15}"
 EndProject
@@ -19,10 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		TemplateBuilder.UnitTestProject.SharedProject\TemplateBuilder.UnitTestProject.SharedProject.projitems*{1589af25-d013-4f59-843c-434074c511f9}*SharedItemsImports = 13
-		TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems*{c8d09a45-30ff-4989-8436-89ed8ac0ec6f}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -42,5 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6AF9E880-6ECA-46A4-A9B4-807E8A1CC7A0}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TemplateBuilder.UnitTestProject.SharedProject\TemplateBuilder.UnitTestProject.SharedProject.projitems*{1589af25-d013-4f59-843c-434074c511f9}*SharedItemsImports = 13
+		TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems*{321afcb9-1f55-4f46-a8e3-f6dcc901db15}*SharedItemsImports = 5
+		TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems*{c8d09a45-30ff-4989-8436-89ed8ac0ec6f}*SharedItemsImports = 13
+		TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems*{d2ac8c19-c60c-4f7b-a054-0ea9f1dc4f6f}*SharedItemsImports = 5
+		TemplateBuilder.UnitTestProject.SharedProject\TemplateBuilder.UnitTestProject.SharedProject.projitems*{d2ac8c19-c60c-4f7b-a054-0ea9f1dc4f6f}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

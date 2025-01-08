@@ -19,16 +19,8 @@ The TemplateBuilder is available on the StringBuilder as an extension method ‘
     <AssemblyVersion>1.0.2.0</AssemblyVersion>
     <FileVersion>1.0.2.0</FileVersion>
     <Version>1.0.2</Version>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Copyright>None</Copyright>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\ReaderWriterLockSlimExtensions\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
 
   <Import Project="..\TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems" Label="Shared" />
 
