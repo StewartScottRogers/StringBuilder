@@ -5,15 +5,13 @@ namespace System.Text.TestLibrary {
         public KeyValuePair<string, string>[] KeyValuePairs = new KeyValuePair<string, string>[] { };
         public ITemplatedDocument TemplatedDocument = null;
 
+        public TemplatedDocumentAndKeyValuePairs(KeyValuePair<string, string>[] keyValuePairs, ITemplatedDocument templatedDocument) {
+            KeyValuePairs = keyValuePairs;
+            TemplatedDocument = templatedDocument;
+        }
+
         public TemplatedDocumentAndKeyValuePairs Clone() {
-            KeyValuePair<string, string>[] keyValuePairs = new KeyValuePair<string, string>[KeyValuePairs.Length];
-            KeyValuePairs.CopyTo(keyValuePairs, 0);
-
-
-            return new TemplatedDocumentAndKeyValuePairs() {
-                KeyValuePairs = keyValuePairs,
-                TemplatedDocument = TemplatedDocument.Clone()
-            };
+            return new TemplatedDocumentAndKeyValuePairs(KeyValuePairs, TemplatedDocument.Clone());
         }
     }
 }
