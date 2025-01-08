@@ -22,7 +22,6 @@ namespace System.Text.TestLibrary {
 
             return new TemplatedDocumentAndKeyValuePairs() {
                 KeyValuePairs = keyValuePairs,
-                StringBuilder = stringBuilder,
                 TemplatedDocument = templateBuilder.ToTemplatedDocument()
             };
         }

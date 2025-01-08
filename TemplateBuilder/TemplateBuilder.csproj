@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>System.Text</RootNamespace>
     <AssemblyName>System.Text.TemplateBuilder</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -20,6 +20,7 @@ The TemplateBuilder is available on the StringBuilder as an extension method ‘
     <FileVersion>1.0.2.0</FileVersion>
     <Version>1.0.2</Version>
     <Copyright>None</Copyright>
+    <IncludeSymbols>True</IncludeSymbols>
   </PropertyGroup>
 
   <Import Project="..\TemplateBuilder.SharedProject\TemplateBuilder.SharedProject.projitems" Label="Shared" />
