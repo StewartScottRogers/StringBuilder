@@ -9,8 +9,8 @@
     <Import_RootNamespace>System.Text</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\StringTest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\StringBuilderTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\StringTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\StringBuilderTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\FromToRange.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\PreBuiltTestTemplates.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\StringMergeAndTest.cs" />
@@ -18,8 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Library\TemplateBuilderMergeAndTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\UnitTestRoutines.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\TemplatedDocumentAndKeyValuePairs.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\TemplateBuilderTest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TestLibrary\UnitTestSmoke.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnitTests\TemplateBuilderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Library\" />

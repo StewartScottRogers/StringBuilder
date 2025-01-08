@@ -12,9 +12,19 @@ namespace System.Text.TestLibrary {
         #region Public Methods
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TemplatedDocumentAndKeyValuePairs CreatTemplatedDocumentAndNameValuePairs(ushort testVariableCount, FromToRange fromToRange) {
-            var keyValuePairs = CreateIndexedNameValuePairs(testVariableCount).ToArray();
-            var stringBuilder = new StringBuilder(keyValuePairs.BuildOutRandomizedTemplate(fromToRange));
-            var templateBuilder = stringBuilder.ToTemplateBuilder();
+            KeyValuePair<string, string>[] keyValuePairs 
+                = CreateIndexedNameValuePairs(testVariableCount)
+                    .ToArray();
+
+            StringBuilder stringBuilder = 
+                new StringBuilder(
+                    keyValuePairs
+                        .BuildOutRandomizedTemplate(fromToRange)
+                );
+
+            ITemplateBuilder templateBuilder 
+                = stringBuilder
+                    .ToTemplateBuilder();
 
             foreach (var keyValuePair in keyValuePairs)
                 templateBuilder

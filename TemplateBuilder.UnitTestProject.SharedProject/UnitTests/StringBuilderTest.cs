@@ -13,8 +13,9 @@ namespace System.Text {
             string targetTemplate
                 = PreBuiltTestTemplates
                     .TemplatedDocumentAndNameValuePairs
-                        .StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(1)
-                            .ToString();
+                        .Clone()
+                            .StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(1)
+                                .ToString();
 
             Debug.Print(targetTemplate);
         }
@@ -22,31 +23,31 @@ namespace System.Text {
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_KeyValuePairs_Into_0000001_Test_Document() {
             foreach (var index in Enumerable.Range(1, 1))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(0);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.Clone().StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(0);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_KeyValuePairs_Into_0000010_Test_Document() {
             foreach (var index in Enumerable.Range(1, 10))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.Clone().StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_KeyValuePairs_Into_0000100_Test_Document() {
             foreach (var index in Enumerable.Range(1, 100))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.Clone().StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_KeyValuePairs_Into_0001000_Test_Document() {
             foreach (var index in Enumerable.Range(1, 1000))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.Clone().StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_KeyValuePairs_Into_0010000_Test_Document() {
             foreach (var index in Enumerable.Range(1, 10000))
-                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
+                PreBuiltTestTemplates.TemplatedDocumentAndNameValuePairs.Clone().StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(index);
         }
     }
 }
