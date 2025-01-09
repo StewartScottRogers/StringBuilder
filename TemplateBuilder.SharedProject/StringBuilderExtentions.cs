@@ -59,15 +59,6 @@ namespace System.Text {
                 }
 
                 public override string ToString() => ToDocument();
-
-                public ITemplatedDocument Clone() {
-                    var clonedKeyValuePairCollection = new Collection<KeyValuePair<string, string>>();
-
-                    foreach (var keyValuePair in KeyValuePairCollection)
-                        clonedKeyValuePairCollection.Add(new KeyValuePair<string, string>(keyValuePair.Key, keyValuePair.Value));
-
-                    return new TemplatedDocument(TemplateTokens, TemplateSize);
-                }
             }
         }
     }
@@ -80,6 +71,5 @@ namespace System.Text {
     public interface ITemplatedDocument {
         ITemplatedDocument ReplaceVariable(string variableName, string variableValue);
         string ToDocument();
-        ITemplatedDocument Clone();
     }
 }

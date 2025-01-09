@@ -7,27 +7,22 @@ namespace System.Text.TestLibrary {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndKeyValuePairs, int index, bool enableTestOfMerge = false) {
 
-            ITemplatedDocument templatedDocument
-                = templatedDocumentAndKeyValuePairs
-                    .TemplatedDocument;
-
-            string targetTemplateCopy
-                = templatedDocument
-                    .ToDocument();
+            string document
+                = templatedDocumentAndKeyValuePairs.ToString();
 
             foreach (var keyValuePair in templatedDocumentAndKeyValuePairs.KeyValuePairs)
-                targetTemplateCopy.Replace(keyValuePair.Key, keyValuePair.Value);
+                document.Replace(keyValuePair.Key, keyValuePair.Value);
 
             if (!enableTestOfMerge)
-                return targetTemplateCopy;
+                return document;
 
-            string text = targetTemplateCopy.ToString();
+            string text = document.ToString();
 
             text.Should().NotBeEmpty();
             foreach (var nameValuePair in templatedDocumentAndKeyValuePairs.KeyValuePairs)
                 text.Should().Contain(nameValuePair.Value);
 
-            return targetTemplateCopy;
+            return document;
         }
     }
 }

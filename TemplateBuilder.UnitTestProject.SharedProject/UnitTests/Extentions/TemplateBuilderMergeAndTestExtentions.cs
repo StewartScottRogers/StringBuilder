@@ -7,9 +7,20 @@ namespace System.Text.TestLibrary {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ITemplatedDocument TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndKeyValuePairs, int index, bool enableTestOfMerge = false) {
 
+            StringBuilder stringBuilder
+              = new StringBuilder(
+                      templatedDocumentAndKeyValuePairs
+                          .Document
+              );
+
+            ITemplateBuilder templateBuilder
+                = stringBuilder
+                    .ToTemplateBuilder();
+
             ITemplatedDocument templatedDocument
-                = templatedDocumentAndKeyValuePairs
-                    .TemplatedDocument;
+                = templateBuilder
+                    .ToTemplatedDocument();
+
 
             foreach (var nameValuePair in templatedDocumentAndKeyValuePairs.KeyValuePairs)
                 templatedDocument

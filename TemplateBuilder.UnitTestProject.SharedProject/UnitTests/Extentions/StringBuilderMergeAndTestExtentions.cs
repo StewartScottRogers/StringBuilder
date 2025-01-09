@@ -6,14 +6,10 @@ namespace System.Text.TestLibrary {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static StringBuilder StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndKeyValuePairs, int index, bool enableTestOfMerge = false) {
 
-            ITemplatedDocument templatedDocument
-                = templatedDocumentAndKeyValuePairs
-                    .TemplatedDocument;
-
             StringBuilder stringBuilder
                 = new StringBuilder(
-                        templatedDocument
-                            .ToDocument()
+                        templatedDocumentAndKeyValuePairs
+                            .Document
                 );
 
             foreach (var nameValuePair in templatedDocumentAndKeyValuePairs.KeyValuePairs)

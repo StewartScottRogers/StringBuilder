@@ -2,16 +2,18 @@
 
 namespace System.Text.TestLibrary {
     public class TemplatedDocumentAndKeyValuePairs {
-        public KeyValuePair<string, string>[] KeyValuePairs = new KeyValuePair<string, string>[] { };
-        public ITemplatedDocument TemplatedDocument = null;
 
-        public TemplatedDocumentAndKeyValuePairs(KeyValuePair<string, string>[] keyValuePairs, ITemplatedDocument templatedDocument) {
+        public KeyValuePair<string, string>[] KeyValuePairs = new KeyValuePair<string, string>[] { };
+
+        public string Document { get; private set; } = "";
+
+        public TemplatedDocumentAndKeyValuePairs(KeyValuePair<string, string>[] keyValuePairs, string document) {
             KeyValuePairs = keyValuePairs;
-            TemplatedDocument = templatedDocument;
+            Document = document;
         }
 
         public TemplatedDocumentAndKeyValuePairs Clone() {
-            return new TemplatedDocumentAndKeyValuePairs(KeyValuePairs, TemplatedDocument.Clone());
+            return new TemplatedDocumentAndKeyValuePairs(KeyValuePairs, Document);
         }
     }
 }

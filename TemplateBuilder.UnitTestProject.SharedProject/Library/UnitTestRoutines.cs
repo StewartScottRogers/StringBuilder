@@ -30,7 +30,12 @@ namespace System.Text.TestLibrary {
                 templateBuilder
                     .AddVariable(keyValuePair.Key);
 
-            return new TemplatedDocumentAndKeyValuePairs(keyValuePairs, templateBuilder.ToTemplatedDocument());
+            string document
+                = templateBuilder
+                    .ToTemplatedDocument()
+                        .ToDocument();
+
+            return new TemplatedDocumentAndKeyValuePairs(keyValuePairs, document);
         }
         #endregion
 

@@ -17,9 +17,8 @@ namespace System.Text {
             string targetTemplate
                 = PreBuiltTestTemplates
                     .PopTemplatedDocumentAndNameValuePairsStack()
-                        .Clone()
-                            .StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(1)
-                                .ToString();
+                        .StringBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(1)
+                            .ToString();
 
             Debug.Print(targetTemplate);
         }

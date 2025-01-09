@@ -2,7 +2,9 @@
 
 namespace System.Text.TestLibrary {
     public static class PreBuiltTestTemplates {
+
         private static Stack<TemplatedDocumentAndKeyValuePairs> preBuiltTemplatedDocumentAndKeyValuePairs = new Stack<TemplatedDocumentAndKeyValuePairs>();
+        
         private static int StackDepth = (10 * 1000 * 1000);
 
         public static void InitStack() { }
