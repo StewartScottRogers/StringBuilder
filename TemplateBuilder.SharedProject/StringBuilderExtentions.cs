@@ -37,7 +37,10 @@ namespace System.Text {
                 private readonly string[] TemplateTokens;
                 private readonly int TemplateSize;
 
-                public TemplatedDocument(string[] templateTokens, int templateSize) { TemplateTokens = templateTokens; TemplateSize = templateSize + (templateSize / 10); }
+                public TemplatedDocument(string[] templateTokens, int templateSize) { 
+                    TemplateTokens = templateTokens; 
+                    TemplateSize = templateSize + (templateSize / 10); 
+                }
 
                 public ITemplatedDocument ReplaceVariable(string variableName, string variableValue) { KeyValuePairCollection.Add(new KeyValuePair<string, string>(variableName, variableValue)); return this; }
 

@@ -8,7 +8,8 @@ namespace System.Text.TestLibrary {
         public static string String_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(this TemplatedDocumentAndKeyValuePairs templatedDocumentAndKeyValuePairs, int index, bool enableTestOfMerge = false) {
 
             string document
-                = templatedDocumentAndKeyValuePairs.ToString();
+                = templatedDocumentAndKeyValuePairs
+                    .Document;
 
             foreach (var keyValuePair in templatedDocumentAndKeyValuePairs.KeyValuePairs)
                 document.Replace(keyValuePair.Key, keyValuePair.Value);
@@ -22,7 +23,7 @@ namespace System.Text.TestLibrary {
             foreach (var nameValuePair in templatedDocumentAndKeyValuePairs.KeyValuePairs)
                 text.Should().Contain(nameValuePair.Value);
 
-            return document;
+            return text;
         }
     }
 }

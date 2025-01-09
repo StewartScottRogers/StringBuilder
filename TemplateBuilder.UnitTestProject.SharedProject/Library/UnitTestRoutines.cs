@@ -12,6 +12,7 @@ namespace System.Text.TestLibrary {
         #region Public Methods
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TemplatedDocumentAndKeyValuePairs CreatTemplatedDocumentAndNameValuePairs(ushort testVariableCount, FromToRange fromToRange) {
+
             KeyValuePair<string, string>[] keyValuePairs
                 = CreateIndexedNameValuePairs(testVariableCount)
                     .ToArray();
@@ -26,14 +27,17 @@ namespace System.Text.TestLibrary {
                 = stringBuilder
                     .ToTemplateBuilder();
 
+            ITemplatedDocument templatedDocument
+                = templateBuilder
+                    .ToTemplatedDocument();
+
             foreach (var keyValuePair in keyValuePairs)
-                templateBuilder
-                    .AddVariable(keyValuePair.Key);
+                templatedDocument
+                    .ReplaceVariable(keyValuePair.Key, keyValuePair.Value);
 
             string document
-                = templateBuilder
-                    .ToTemplatedDocument()
-                        .ToDocument();
+                = templatedDocument
+                    .ToDocument();
 
             return new TemplatedDocumentAndKeyValuePairs(keyValuePairs, document);
         }

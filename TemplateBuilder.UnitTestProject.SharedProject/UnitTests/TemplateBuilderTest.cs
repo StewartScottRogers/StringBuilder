@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using System.Diagnostics;
 using System.Linq;
 using System.Text.TestLibrary;
 
@@ -13,9 +13,13 @@ namespace System.Text {
 
         [TestMethod]
         public void Merge_A_Test_Template_With_Test_KeyValuePairs_Into_0000001_A_Test_Document_In_Order_To_Warmup_UnitTest() {
-            PreBuiltTestTemplates
-                .PopTemplatedDocumentAndNameValuePairsStack()
-                    .TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(1);
+            string targetTemplate
+               = PreBuiltTestTemplates
+                   .PopTemplatedDocumentAndNameValuePairsStack()
+                        .TemplateBuilder_MergeTemplateWithNamedValuePairsIntoADocumentAndOptionalyTest(1)
+                            .ToDocument();
+
+            Debug.Print(targetTemplate);
         }
 
         [TestMethod]
